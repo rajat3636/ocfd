@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "dev":"node src/app.js",
+    "build": "npm i"
+  },
   "dependencies": {
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
