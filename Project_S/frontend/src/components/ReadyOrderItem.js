@@ -14,13 +14,16 @@ function ReadyOrderItem(props) {
 
         setText('Processing..');
         console.log(`Deleting ${data.email}`);
-        const response = await fetch(`http://localhost:4000/foods/deleteOrder`, {
-            method: 'DELETE',
+        const response = await fetch(
+          `https://muddy-girdle-wasp.cyclic.app/foods/deleteOrder`,
+          {
+            method: "DELETE",
             headers: {
-                'Content-Type': 'application/json'
+              "Content-Type": "application/json",
             },
-            body: JSON.stringify(data)
-        });
+            body: JSON.stringify(data),
+          }
+        );
 
         if (!response.ok) {
             setText('Try Again..')

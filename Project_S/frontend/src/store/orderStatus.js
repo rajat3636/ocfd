@@ -40,13 +40,16 @@ export const getCurrentStatus = (requestData) => {
     return async (dispatch) => {
         dispatch(orderStatusActions.setStatusLoadingMessage());
 
-        const response = await fetch(`http://localhost:4000/foods/userFoodStatus`, {
-            method: 'POST',
+        const response = await fetch(
+          `https://muddy-girdle-wasp.cyclic.app/foods/userFoodStatus`,
+          {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+              "Content-Type": "application/json",
             },
-            body: JSON.stringify(requestData)
-        });
+            body: JSON.stringify(requestData),
+          }
+        );
 
         const responseData = await response.json();
         if (!response.ok) {

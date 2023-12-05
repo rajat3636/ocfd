@@ -31,10 +31,13 @@ function AddItemForm(props) {
 
         props.setToTrue();
         setErrorMessage('');
-        const response = await fetch('http://localhost:4000/foods/addItem', {
-            method: 'POST',
-            body: formData
-        });
+        const response = await fetch(
+          "https://muddy-girdle-wasp.cyclic.app/foods/addItem",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         if (!response.ok) {
             const responseData = await response.json();

@@ -59,13 +59,16 @@ function OrderListItem(props) {
 
         if (props.state == 'start' || (userData.userName === props.handledBy)) {
             console.log('Sending request....');
-            const response = await fetch(`http://localhost:4000/foods/changeProcessingState`, {
-                method: 'POST',
+            const response = await fetch(
+              `https://muddy-girdle-wasp.cyclic.app/foods/changeProcessingState`,
+              {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                  "Content-Type": "application/json",
                 },
-                body: JSON.stringify(processingData)
-            });
+                body: JSON.stringify(processingData),
+              }
+            );
 
             if (!response.ok) {
                 throw json({ error: 'Could Not Update Processing State...' });

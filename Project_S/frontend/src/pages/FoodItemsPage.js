@@ -68,13 +68,16 @@ export default FoodItemsPage;
 export async function loader() {
     const userData = JSON.parse(localStorage.getItem('userData'));
 
-    const response = await fetch(`http://localhost:4000/foods/getFoods`, {
-        method: 'POST',
+    const response = await fetch(
+      `https://muddy-girdle-wasp.cyclic.app/foods/getFoods`,
+      {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(userData)
-    });
+        body: JSON.stringify(userData),
+      }
+    );
 
     if (!response.ok) {
         return false;

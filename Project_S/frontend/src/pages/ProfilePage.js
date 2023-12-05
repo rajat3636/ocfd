@@ -61,13 +61,16 @@ export async function loader() {
         endPoint = 'staffs';
     }
 
-    const response = await fetch(`http://localhost:4000/${endPoint}/fetchProfile`, {
-        method: 'GET',
+    const response = await fetch(
+      `https://muddy-girdle-wasp.cyclic.app/${endPoint}/fetchProfile`,
+      {
+        method: "GET",
         headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        }
-    });
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
     if (!response.ok) {
         return redirect('/login');

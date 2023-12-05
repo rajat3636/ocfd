@@ -24,14 +24,16 @@ function Navigation(props) {
                 endPoint = 'staffs';
             }
 
-            const response = await fetch(`http://localhost:4000/${endPoint}/logout`,
-                {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${localStorage.getItem('token')}`
-                    }
-                });
+            const response = await fetch(
+              `https://muddy-girdle-wasp.cyclic.app/${endPoint}/logout`,
+              {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              }
+            );
 
             if (!response.ok) {
                 throw json({ error: 'Internal Server Error', status: 500 });

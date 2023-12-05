@@ -17,13 +17,16 @@ function Orders(props) {
     let readyFoodData = [];
 
     const fetchData = useCallback(async () => {
-        const response = await fetch(`http://localhost:4000/foods/activeOrders`, {
-            method: 'POST',
+        const response = await fetch(
+          `https://muddy-girdle-wasp.cyclic.app/foods/activeOrders`,
+          {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+              "Content-Type": "application/json",
             },
-            body: JSON.stringify({ restaurentName: userData.restaurentName })
-        });
+            body: JSON.stringify({ restaurentName: userData.restaurentName }),
+          }
+        );
         const responseData = await response.json();
         parsedData = [];
         readyFoodData = [];

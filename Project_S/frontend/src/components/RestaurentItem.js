@@ -37,22 +37,45 @@ function RestaurentItem(props) {
     };
 
     return (
-        <Fragment>
-            <div className={classes.RestrauntItem}>
-                <div className={classes.RestrauntItemHeading}>{props.itemData.foodName}</div>
-                <div className={classes.RestrauntItemImage}>
-                    <img src={`http://localhost:4000/${props.restaurentName}/${props.itemData.foodName}`} />
-                </div>
-                <div className={classes.RestrauntItemMenu}>
-                    <div className={`${classes.MenuComponents} ${classes.Price}`}>{props.itemData.price}/-</div>
-                    <div className={`${classes.MenuComponents} ${classes.Time}`}>{props.itemData.time}</div>
-                    <img onClick={removeFromCartHandler} src="/images/Minus.png" className={`${classes.MenuComponents} ${classes.Minus}`} />
-                    <div className={`${classes.MenuComponents} ${classes.Quantity}`}>00</div>
-                    <img onClick={addToCartHandler} src="/images/Plus.png" className={`${classes.MenuComponents} ${classes.Plus}`} />
-                    <div onClick={addToCartHandler} className={`${classes.MenuComponents} ${classes.Add}`}>Add+</div>
-                </div>
+      <Fragment>
+        <div className={classes.RestrauntItem}>
+          <div className={classes.RestrauntItemHeading}>
+            {props.itemData.foodName}
+          </div>
+          <div className={classes.RestrauntItemImage}>
+            <img
+              src={`https://muddy-girdle-wasp.cyclic.app/${props.restaurentName}/${props.itemData.foodName}`}
+            />
+          </div>
+          <div className={classes.RestrauntItemMenu}>
+            <div className={`${classes.MenuComponents} ${classes.Price}`}>
+              {props.itemData.price}/-
             </div>
-        </Fragment>
+            <div className={`${classes.MenuComponents} ${classes.Time}`}>
+              {props.itemData.time}
+            </div>
+            <img
+              onClick={removeFromCartHandler}
+              src="/images/Minus.png"
+              className={`${classes.MenuComponents} ${classes.Minus}`}
+            />
+            <div className={`${classes.MenuComponents} ${classes.Quantity}`}>
+              00
+            </div>
+            <img
+              onClick={addToCartHandler}
+              src="/images/Plus.png"
+              className={`${classes.MenuComponents} ${classes.Plus}`}
+            />
+            <div
+              onClick={addToCartHandler}
+              className={`${classes.MenuComponents} ${classes.Add}`}
+            >
+              Add+
+            </div>
+          </div>
+        </div>
+      </Fragment>
     );
 }
 

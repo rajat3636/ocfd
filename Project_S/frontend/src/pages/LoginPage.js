@@ -36,13 +36,16 @@ export async function action({ request }) {
     else {
         endPoint = 'staffs/login';
     }
-    const response = await fetch(`http://localhost:4000/${endPoint}`, {
-        method: 'POST',
+    const response = await fetch(
+      `https://muddy-girdle-wasp.cyclic.app/${endPoint}`,
+      {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(userData)
-    });
+        body: JSON.stringify(userData),
+      }
+    );
 
     if (!response.ok) {
         return ({ error: 'Unable to login user....', status: 400 });

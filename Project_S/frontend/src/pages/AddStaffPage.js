@@ -54,13 +54,16 @@ export async function action({ request }) {
         type: 'staff'
     };
 
-    const response = await fetch('http://localhost:4000/staffs', {
-        method: 'POST',
+    const response = await fetch(
+      "https://muddy-girdle-wasp.cyclic.app/staffs",
+      {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(staffData)
-    });
+        body: JSON.stringify(staffData),
+      }
+    );
 
     if (!response.ok) {
         throw json({ error: 'Could Not create a staff member.', status: 500 }, { status: 500 });
