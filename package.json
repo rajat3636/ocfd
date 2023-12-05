@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "node src/app.js",
+    "start": "node src/app.js",
     "build": "npm i"
   },
   "dependencies": {
