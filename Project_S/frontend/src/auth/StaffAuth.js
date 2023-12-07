@@ -9,16 +9,13 @@ export async function loader() {
     if (!userData)
         return redirect('/login');
 
-    const response = await fetch(
-      `https://muddy-girdle-wasp.cyclic.app/staffs/auth`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await fetch(`http://localhost:4000/staffs/auth`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
     if (!response.ok) {
         return redirect('/login');

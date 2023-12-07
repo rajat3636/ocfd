@@ -62,7 +62,7 @@ export async function loader() {
     }
 
     const response = await fetch(
-      `https://muddy-girdle-wasp.cyclic.app/${endPoint}/fetchProfile`,
+      `http://localhost:4000/${endPoint}/fetchProfile`,
       {
         method: "GET",
         headers: {

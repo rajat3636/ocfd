@@ -35,7 +35,7 @@ export async function action({ request }) {
         type: "customer"
     }
 
-    const response = await fetch(`https://muddy-girdle-wasp.cyclic.app/users`, {
+    const response = await fetch(`http://localhost:4000/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

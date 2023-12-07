@@ -6,7 +6,7 @@ const Manager = require('../models/manager');
 const { RestaurentFoods } = require('../models/restaurentFoods');
 
 const router = new express.Router();
-
+//http://localhost:4000
 router.post('/managers', async function (request, response) {
     const existEmail = await Manager.findOne({ email: request.body.email });
     if (existEmail) {

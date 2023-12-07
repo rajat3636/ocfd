@@ -64,17 +64,14 @@ function AmountSideBarFooter(props) {
         }
 
         try {
-            const response = await fetch(
-              "https://muddy-girdle-wasp.cyclic.app/users/order",
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                  Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-                body: JSON.stringify(orderData),
-              }
-            );
+            const response = await fetch("http://localhost:4000/users/order", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+              body: JSON.stringify(orderData),
+            });
 
             if (!response.ok) {
                 setIsOrdered('failed');

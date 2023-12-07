@@ -85,15 +85,12 @@ export default UserHomePage;
 
 export async function loader() {
     const token = localStorage.getItem('token');
-    const response = await fetch(
-      `https://muddy-girdle-wasp.cyclic.app/AllRestaurents/`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await fetch(`http://localhost:4000/AllRestaurents/`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
     if (!response.ok) {
         throw json({ error: 'Could Not Fetch Restaurents Data' }, { status: 500 });

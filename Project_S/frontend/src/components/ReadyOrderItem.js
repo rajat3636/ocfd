@@ -15,7 +15,7 @@ function ReadyOrderItem(props) {
         setText('Processing..');
         console.log(`Deleting ${data.email}`);
         const response = await fetch(
-          `https://muddy-girdle-wasp.cyclic.app/foods/deleteOrder`,
+          `http://localhost:4000/foods/deleteOrder`,
           {
             method: "DELETE",
             headers: {

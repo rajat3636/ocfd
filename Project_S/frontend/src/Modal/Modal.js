@@ -7,20 +7,17 @@ function Modal(props) {
         const userData = JSON.parse(localStorage.getItem('userData'));
         const token = localStorage.getItem('token');
 
-        const response = await fetch(
-          "https://muddy-girdle-wasp.cyclic.app/foods/deleteItem",
-          {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify({
-              restaurentName: userData.restaurentName,
-              foodName: props.foodName,
-            }),
-          }
-        );
+        const response = await fetch("http://localhost:4000/foods/deleteItem", {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            restaurentName: userData.restaurentName,
+            foodName: props.foodName,
+          }),
+        });
 
         if (!response.ok) {
             throw json({ error: 'Could Not delete item...' })

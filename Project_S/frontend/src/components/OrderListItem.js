@@ -60,7 +60,7 @@ function OrderListItem(props) {
         if (props.state == 'start' || (userData.userName === props.handledBy)) {
             console.log('Sending request....');
             const response = await fetch(
-              `https://muddy-girdle-wasp.cyclic.app/foods/changeProcessingState`,
+              `http://localhost:4000/foods/changeProcessingState`,
               {
                 method: "POST",
                 headers: {

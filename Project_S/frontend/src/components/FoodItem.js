@@ -28,7 +28,7 @@ function FoodItem(props) {
           <div className={classes.RestrauntItemImage}>
             <img
               className={classes.image}
-              src={`https://muddy-girdle-wasp.cyclic.app/${props.restaurentName}/${props.foodName}/resize`}
+              src={`http://localhost:4000/${props.restaurentName}/${props.foodName}/resize`}
             />
           </div>
           <div className={classes.RestrauntItemMenu}>

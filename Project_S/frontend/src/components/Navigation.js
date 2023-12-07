@@ -25,7 +25,7 @@ function Navigation(props) {
             }
 
             const response = await fetch(
-              `https://muddy-girdle-wasp.cyclic.app/${endPoint}/logout`,
+              `http://localhost:4000/${endPoint}/logout`,
               {
                 method: "GET",
                 headers: {

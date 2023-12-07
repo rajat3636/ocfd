@@ -18,7 +18,7 @@ function Orders(props) {
 
     const fetchData = useCallback(async () => {
         const response = await fetch(
-          `https://muddy-girdle-wasp.cyclic.app/foods/activeOrders`,
+          `http://localhost:4000/foods/activeOrders`,
           {
             method: "POST",
             headers: {
